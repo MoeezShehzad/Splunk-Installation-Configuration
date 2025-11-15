@@ -31,13 +31,12 @@ The objective of this task is to assist everyone in installing and configuring S
   Only Splunk is not enough if you want to get real-time threats from the operating systems you want to monitor; then you have to install Splunk Universal Forwarder on the endpoint systems.
   
 # For Debian OS's 
-wget -O splunkforwarder-9.3.0.deb "https://download.splunk.com/products/universalforwarder/releases/9.3.0/linux/splunkforwarder-9.3.0-51ccf43db5bd-linux-2.6-amd64.deb"
+    wget -O splunkforwarder-9.3.0.deb "https://download.splunk.com/products/universalforwarder/releases/9.3.0/linux/splunkforwarder-9.3.0-51ccf43db5bd-linux-2.6-amd64.deb"
 
 You can download it from here for Debian.
 
-# Step 2:
- Then run the following command
- sudo dpkg -i splunkforwarder.deb
+# Step 2: Install Splunk Forwarder
+     sudo dpkg -i splunkforwarder.deb
  
 # In case there are dependency errors, run the following Command
     sudo apt --fix-broken install -y
