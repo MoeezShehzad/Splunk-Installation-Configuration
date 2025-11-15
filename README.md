@@ -9,15 +9,14 @@ The objective of this task is to help everyone install and configure Splunk on a
 
 # Steps to Install and Configure Splunk on Ubuntu
 Step 1: Download Splunk
-      Open Terminal and download Splunk using wget: wget -O splunk-9.3.0-51ccf43db5bd-linux-2.6-amd64.deb "https://download.splunk.com/products/splunk/releases/9.3.0/linux/splunk-9.3.0-51ccf43db5bd-linux-2.6-amd64.deb"
- 2. Once downloaded, install Splunk:
+   1. Open Terminal and download Splunk using wget: wget -O splunk-9.3.0-51ccf43db5bd-linux-2.6-amd64.deb "https://download.splunk.com/products/splunk/releases/9.3.0/linux/splunk-9.3.0-51ccf43db5bd-linux-2.6-amd64.deb" 
+   2. Once downloaded, install Splunk:
       sudo dpkg -i splunk-ubuntu.deb
 Step 2: Enable Splunk as a Service
- 1. Move to the Splunk installation directory:
-    cd /opt/splunk/bin
- 2. Accept the license agreement and enable Splunk at boot:
-    sudo ./splunk enable boot-start --accept-license
-
+   1. Move to the Splunk installation directory:
+      cd /opt/splunk/bin
+   2. Accept the license agreement and enable Splunk at boot:
+      sudo ./splunk enable boot-start --accept-license
   3. Start Splunk:
      sudo ./splunk start
      When prompted, set up an admin username and password.
