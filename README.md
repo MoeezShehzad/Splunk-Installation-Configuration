@@ -20,8 +20,9 @@ Step 2: Enable Splunk as a Service
 
   3. Start Splunk:
      sudo ./splunk start
-    When prompted, set up an admin username and password.
+     When prompted, set up an admin username and password.
 Step 3: Access Splunk Web Interface
      Open a web browser and go to:
      http://<your-server-ip>:8000
+
 Log in with the admin credentials created earlier.
