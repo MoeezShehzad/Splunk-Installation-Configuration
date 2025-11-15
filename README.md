@@ -48,16 +48,20 @@ You can download it from here for Debian.
     sudo /opt/splunkforwarder/bin/splunk enable boot-start
 
 # Step 5: Configure forwarding to your Splunk Enterprise indexer (replace INDEXER_IP and port 9997):
-    sudo /opt/splunkforwarder/bin/splunk add forward-server INDEXER_IP:9997 -auth admin:YourAdminPass
+    sudo /opt/splunkforwarder/bin/splunk add forward-server <YOUR-UBUNTU-MACHINE-IP>:9997 -auth <Your-Username>:<Your-Password>
 
-# Step 6: Add data inputs (for example monitor logs) by editing /opt/splunkforwarder/etc/system/local/inputs.conf:
+# Step 6: Add data inputs (for example, monitor logs) by editing /opt/splunkforwarder/etc/system/local/inputs.conf:
 
     [monitor:///var/log/syslog]
     disabled = false
     sourcetype = linux:syslog
     index = platform_logs
 
-# Step 7: Restart the forwarder
+# Step 7: Add the following paths logs to monitor:
+    sudo /opt/splunkforwarder/bin/splunk add monitor /var/log/auth.log -sourcetype linux:auth
+    sudo /opt/splunkforwarder/bin/splunk add monitor /var/log/syslog -sourcetype linux:syslog
+
+# Step 8: Restart the forwarder
     sudo /opt/splunkforwarder/bin/splunk restart
 
 # Final: On Splunk Enterprise server: confirm that it’s receiving data (Settings → Forwarding & Receiving → Received data).
